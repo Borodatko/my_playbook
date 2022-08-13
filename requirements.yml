@@ -1,25 +1,25 @@
 ---
-  - src: git@github.com:Borodatko/Nginx-role.git
+  - src: https://github.com/Borodatko/Nginx-role.git
     scm: git
     version: "1.0.10"
     name: Nginx-role
 
-  - src: git@github.com:Borodatko/MySQL-role.git
+  - src: https://github.com/Borodatko/MySQL-role.git
     scm: git
     version: "1.0.8"
     name: MySQL-role
 
-  - src: git@github.com:Borodatko/Wordpress-role.git
+  - src: https://github.com/Borodatko/Wordpress-role.git
     scm: git
     version: "1.0.7"
     name: Wordpress-role
 
-  - src: git@github.com:Borodatko/GitLab-role.git
+  - src: https://github.com/Borodatko/GitLab-role.git
     scm: git
     version: "1.0.15"
     name: GitLab-role
 
-  - src: git@github.com:Borodatko/Monitoring-role.git
+  - src: https://github.com/Borodatko/Monitoring-role.git
     scm: git
     version: "1.0.8"
     name: Monitoring-role
