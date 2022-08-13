@@ -1,0 +1,56 @@
+---
+
+- name: Stack Provisioning
+  hosts: all
+  tasks:
+
+  - name: Set timezone
+    community.general.timezone:
+      name: Europe/Moscow
+
+  - name: Firewall - Stop SELinux
+    become: true
+    shell: setenforce 0
+
+  - name: Firewall - Disable SELinux
+    become: true
+    ansible.posix.selinux:
+      state: disabled
+
+  - name: Hosts - Rename Hostname
+    become: true
+    ansible.builtin.hostname:
+      name: "{{ inventory_hostname }}"
+
+  - name: Yum - Upgrade packages
+    become: true
+    yum:
+      name: "*"
+      enablerepo: base,updates,extras
+      state: latest
+      update_cache: yes
+
+- name: Nginx Provisioning
+  hosts: nginx
+  roles:
+    - Nginx-role
+
+- name: MySQL Provisioning
+  hosts: mysql
+  roles:
+    - MySQL-role
+
+- name: Wordpress Provisioning
+  hosts: wordpress
+  roles:
+    - Wordpress-role
+
+- name: GitLab Provisioning
+  hosts: git
+  roles:
+    - GitLab-role
+
+- name: Monitoring Provisioning
+  hosts: monitor
+  roles:
+    - Monitoring-role
