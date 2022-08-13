@@ -1,7 +1,7 @@
 ---
   - src: git@github.com:Borodatko/Nginx-role.git
     scm: git
-    version: "1.0.9"
+    version: "1.0.10"
     name: Nginx-role
 
   - src: git@github.com:Borodatko/MySQL-role.git
@@ -16,7 +16,7 @@
 
   - src: git@github.com:Borodatko/GitLab-role.git
     scm: git
-    version: "1.0.14"
+    version: "1.0.15"
     name: GitLab-role
 
   - src: git@github.com:Borodatko/Monitoring-role.git
